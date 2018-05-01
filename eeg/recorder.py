@@ -4,6 +4,8 @@ import time
 import uuid
 
 from datetime import datetime
+from threading import Thread
+
 from mindcontrol.userbrain import Brain
 from time import sleep
 
@@ -48,6 +50,10 @@ class Recorder(object):
             if abs_values[wave_type][1] <= given_data[wave_type]:
                 abs_values[wave_type][1] = given_data[wave_type]
         return abs_values
+
+    def start_recording_thread(self):
+        self.th = Thread(target=self.start_recording_thread, args=())
+        self.th.start()
 
     def start_recording(self):
         # random_clusters = [str(uuid.uuid4()), str(uuid.uuid4()), str(uuid.uuid4())]

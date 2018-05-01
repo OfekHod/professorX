@@ -56,8 +56,7 @@ def main(draw_func, fps=40):
 
     # TODO: start eeg
     recorder = Recorder(finish_time)
-    current_thread = threading.Thread(recorder.start_recording)
-    current_thread.start()
+    recorder.start_recording_thread()
 
     # while check_total_elapsed(start_time) and not window_closed():
     while datetime.now() <= finish_time and not window_closed():
@@ -65,7 +64,6 @@ def main(draw_func, fps=40):
         draw_func(datetime.now())
         clock.tick(fps)
 
-    current_thread.join()
     # TODO: end eeg
     # TODO: edit data(add cluster_id)
 
