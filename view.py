@@ -14,7 +14,7 @@ class ImagesDrawer:
 
     # Draw image if given time is inside duration window.
     def draw(self, time):
-        game_display.fill(BACKGROUND_COLOR)
+        game_display.fill(Settings.background_color)
 
         for image in self.images:
             image.draw(time)
@@ -35,14 +35,6 @@ class ImageDisplay:
         if self.time <= time <= self.time + self.duration:
             game_display.blit(self.image, (self.pos_x, self.pos_y))
 
-    def show_duration(self):
-        self.draw(self.time)
-        pygame.display.update()
-        self.displayed = True
-        clock.tick(1000 / self.duration)
-        game_display.fill(BACKGROUND_COLOR)
-        pygame.display.update()
-
 
 def window_closed():
     for event in pygame.event.get():
@@ -51,9 +43,5 @@ def window_closed():
     return False
 
 
-class _Colors:
-    black = (0, 0, 0)
-    white = (255, 255, 255)
-
-
-BACKGROUND_COLOR = _Colors.white
+def image(name):
+    return Settings.images_path + name

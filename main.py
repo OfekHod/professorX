@@ -1,5 +1,5 @@
-from view import ImagesDrawer, ImageDisplay, clock, window_closed
-from utils import current_time_milli, image, check_total_elapsed
+from view import ImagesDrawer, ImageDisplay, clock, window_closed, image
+from time_utils import current_time_milli, check_total_elapsed
 
 drawer = ImagesDrawer([
     ImageDisplay(image("prof1.jpg"), 1000, 1500, -100),
