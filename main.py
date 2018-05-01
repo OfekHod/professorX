@@ -1,5 +1,6 @@
-from view import ImagesDrawer, ImageDisplay, clock, window_closed, image
-from time_utils import current_time_milli, check_total_elapsed
+from view.view import ImagesDrawer, ImageDisplay, clock, window_closed, image
+from common.time_utils import current_time_milli, check_total_elapsed
+from eeg.eeg import eeg_logic
 
 drawer = ImagesDrawer([
     ImageDisplay(image("prof1.jpg"), 1000, 1500, -100),
@@ -18,9 +19,6 @@ def main_loop(update, draw, fps=40):
         update()
         draw(current_time_milli() - start_time)
         clock.tick(fps)
-
-
-def eeg_logic(): return
 
 
 main_loop(update=eeg_logic,
