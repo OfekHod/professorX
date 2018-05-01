@@ -1,5 +1,5 @@
 import time
-from settings import Settings
+from common.settings import Settings
 
 
 def current_time_milli():

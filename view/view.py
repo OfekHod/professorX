@@ -1,5 +1,5 @@
 import pygame
-from settings import Settings
+from common.settings import Settings
 
 pygame.init()
 clock = pygame.time.Clock()
