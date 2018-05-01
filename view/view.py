@@ -12,7 +12,6 @@ class ImagesDrawer:
     def __init__(self, images):
         self.images = images
 
-    # Draw image if given time is inside duration window.
     def draw(self, time):
         game_display.fill(Settings.background_color)
 
@@ -31,6 +30,7 @@ class ImageDisplay:
         self.pos_x = pos_x
         self.pos_y = pos_y
 
+    # Draw image if given time is inside duration window.
     def draw(self, time):
         if self.time <= time <= self.time + self.duration:
             game_display.blit(self.image, (self.pos_x, self.pos_y))
