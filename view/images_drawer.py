@@ -1,4 +1,5 @@
 import pygame
+
 from common.settings import Settings
 
 pygame.init()
@@ -8,7 +9,7 @@ pygame.display.set_caption(Settings.project_name)
 crashed = False
 
 
-class ImagesDrawer:
+class ImagesDrawer(object):
     def __init__(self, images):
         self.images = images
 
@@ -18,22 +19,6 @@ class ImagesDrawer:
         for image in self.images:
             image.draw(time)
         pygame.display.update()
-
-
-class ImageDisplay:
-    displayed = False
-
-    def __init__(self, image_path, time, duration, pos_x=0, pos_y=0):
-        self.image = pygame.image.load(image_path)
-        self.time = time
-        self.duration = duration
-        self.pos_x = pos_x
-        self.pos_y = pos_y
-
-    # Draw image if given time is inside duration window.
-    def draw(self, time):
-        if self.time <= time <= self.time + self.duration:
-            game_display.blit(self.image, (self.pos_x, self.pos_y))
 
 
 def window_closed():

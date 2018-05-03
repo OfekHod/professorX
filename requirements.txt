@@ -1,0 +1,2 @@
+pygame
+mindcontrol>=0.7

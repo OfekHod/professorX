@@ -1,13 +1,7 @@
-from view.view import ImagesDrawer, ImageDisplay, clock, window_closed, image
+from view.images_drawer import ImagesDrawer, clock, window_closed, image
+from view.image_display import ImageDisplay
 from common.time_utils import current_time_milli, check_total_elapsed
-from eeg.eeg import eeg_logic
-
-drawer = ImagesDrawer([
-    ImageDisplay(image("prof1.jpg"), 1000, 1500, -100),
-    ImageDisplay(image("nadav.jpg"), 3000, 200, 50),
-    ImageDisplay(image("hen.jpg"), 3700, 400, 50),
-    ImageDisplay(image("nadav.jpg"), 4600, 250, 50),
-    ImageDisplay(image("hen.jpg"), 5250, 50, 50)])
+from eeg.recorder import eeg_logic
 
 start_time = current_time_milli()
 
